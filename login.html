@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | DevNest</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+  <div class="login-glow" aria-hidden="true"></div>
+  <main class="login-box">
+    <a href="index.html" class="login-logo">DevNest</a>
+    <h1>Conect-se.Crie.Evolua</h1>
+
+    <form id="loginForm" class="login-form">
+      <label class="sr-only" for="loginUsuario">Email ou nome de usuário</label>
+      <input type="text" id="loginUsuario" placeholder="EMAIL/NOME DE USUÁRIO" autocomplete="username" required>
+      <label class="sr-only" for="loginSenha">Senha</label>
+      <input type="password" id="loginSenha" placeholder="SENHA" autocomplete="current-password" required>
+      <button type="submit">ENTRAR</button>
+    </form>
+
+    <p class="signup-line">Não possui conta? <a href="cadastro.html">Cadastre-se</a></p>
+    <div class="or-row"><span></span><b>ou</b><span></span></div>
+    <div class="social-row">
+      <button type="button" class="social-btn" aria-label="Entrar com Google">G</button>
+      <button type="button" class="social-btn apple" aria-label="Entrar com Apple">●</button>
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

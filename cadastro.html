@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | DevNest</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="cadastro-page">
+  <div class="cadastro-shell">
+    <header class="cadastro-header">
+      <a class="brand" href="index.html">DevNest</a>
+      <a href="index.html" class="cad-home">Home</a>
+    </header>
+
+    <main class="cad-card">
+      <h1>CADASTRO</h1>
+      <form id="registerForm" class="cad-form">
+        <label>Nome Completo<input type="text" name="nome" required></label>
+        <label>Profissão<input type="text" name="profissao" required></label>
+        <label>Área de Atuação<input type="text" name="area" required></label>
+        <label>PJ/CPF<input type="text" name="documento" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Telefone<input type="tel" name="telefone"></label>
+
+        <div class="location-row">
+          <label>País<input type="text" name="pais"></label>
+          <label>Cidade<input type="text" name="cidade"></label>
+          <label>Estado<input type="text" name="estado"></label>
+        </div>
+
+        <label>Senha<input type="password" name="senha" required></label>
+        <label>Confirme a Senha<input type="password" name="confirmaSenha" required></label>
+
+        <div class="cad-divider"></div>
+        <div class="photo-block">
+          <span>Foto</span>
+          <label class="photo-circle" title="Adicionar foto">
+            <input type="file" id="fotoPerfil" accept="image/*">
+            <img id="fotoPreview" alt="Prévia da foto">
+            <span class="photo-hint">+</span>
+          </label>
+        </div>
+
+        <label>Habilidades<input type="text" name="habilidades"></label>
+        <label>Projetos Experiências<textarea name="experiencias" rows="3"></textarea></label>
+        <label>Portifólio<input type="url" name="portfolio"></label>
+        <label>LinkedIn<input type="url" name="linkedin"></label>
+        <label>Git Hub<input type="url" name="github"></label>
+
+        <label class="terms-row">
+          <input type="checkbox" name="termos" required>
+          <span>Li e Concordo com os Termos de Política e Privacidade.</span>
+        </label>
+        <button class="cad-submit" type="submit">Cadastrar-se</button>
+      </form>
+    </main>
+    <footer class="footer cadastro-footer">DevNest</footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
