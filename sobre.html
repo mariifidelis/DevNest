@@ -1,27 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre | DevNest</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenest</title>
+    <link rel="icon" type="image/x-icon" href="src/img/logo.jpeg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="inner-page">
-  <div class="site-shell inner-shell">
-    <header class="navbar">
-      <a href="index.html" class="brand">DevNest</a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
-      <nav class="main-nav"><a href="index.html">Home</a><a href="projetos.html">Projetos</a><a href="login.html">Login</a></nav>
-    </header>
-    <main class="about">
-      <p class="eyebrow">sobre</p>
-      <h1>SOBRE O DEVNEST</h1>
-      <p>O DevNest conecta profissionais freelancers da área de tecnologia a projetos e oportunidades.</p>
-      <p>A plataforma permite encontrar projetos, analisar requisitos, enviar propostas e acompanhar o processo até o fechamento do contrato.</p>
-      <a href="projetos.html" class="main-btn link-btn">VER PROJETOS</a>
-    </main>
-    <footer class="footer">DevNest</footer>
+
+<body class="topbar">
+    <div class="topbar">
+
+        <header class="header">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo Devenest">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+                    <nav class="main-nav" aria-label="Navegação principal">
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                        <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="mainsobre">
+            <section class="sobre">
+                <div class="sobre-content">
+                    <h2>Sobre o Devenest</h2>
+                    <p>Conectando talentos de tecnologia às melhores oportunidades.</p><br>
+                    <p>O DevNest aproxima freelancers e empresas para tornar a busca por oportunidades e profissionais mais simples, clara e segura.</p>
+                    <a href="projetos.html" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="s-cards">
+                    <div class="s-card">
+                        <h4 class="s-card__title">Missão</h4>
+                        <p class="s-card__body">Ajudar pessoas a desenvolverem suas habilidades em tecnologia e
+                            a encontrarem oportunidades de carreira.</p>
+                    </div>
+                    <div class="s-card">
+                        <h4 class="s-card__title">Visão</h4>
+                        <p class="s-card__body">Ser uma plataforma de referência para conectar profissionais de tecnologia a projetos, empresas e novas oportunidades de carreira.</p>
+                    </div>
+                </div>
+    </div>
+    </section>
+
+    <section class="s-features"></section>
+    <div class="s-features__content">
+        <p class="s-eyebrow">O que nos diferencia</p>
+        <p class="s-body">
+            Criamos uma experiência simples para que profissionais encontrem projetos compatíveis com suas habilidades e empresas encontrem os talentos certos para cada desafio.
+        </p>
+        <p class="s-body">
+            O DevNest valoriza portfólios, habilidades, experiências e comunicação direta, deixando cada etapa da conexão mais objetiva.
+        </p>
+
+        <ul class="s-checklist">
+            <li>
+                <span class="s-check">✓</span>
+                Perfis organizados por habilidades e experiência
+            </li>
+            <li>
+                <span class="s-check">✓</span>
+                Busca e filtros para encontrar o profissional certo
+            </li>
+            <li>
+                <span class="s-check">✓</span>
+                Projetos com informações claras de prazo e orçamento
+            </li>
+            <li>
+                <span class="s-check">✓</span>
+                Portfólio e experiências em destaque
+            </li>
+            <li>
+                <span class="s-check">✓</span>
+                Conexão direta entre freelancer e empresa
+            </li>
+        </ul>
+    </div>
+     <br>
+     <br>
+
+    </section>
+     <footer class="footer">
+      <div class="footer_name">
+      <h3>DevNest</h3>
+      <p>Conheça um novo mundo.<br>De inovação, tecnologia e aprendizado.</p>
+      <br>
   </div>
-  <script src="js/script.js"></script>
+    <nav class="footer_nav">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="cadastro.html">Cadastre-se</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__contact">
+      <h4>Dúvidas?</h4>
+      <div class="footer__form">
+        <input class="footer__input" type="text" placeholder="Nome" />
+        <input class="footer__input" type="email" placeholder="Email" />
+        <textarea class="footer__input footer__textarea" placeholder="Sua dúvida"></textarea>
+       <button class="button-enviar" type="button" onclick="duvida()">Enviar!</button>
+      </div>
+    
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 DevNest</p>
+    </div>
+  </footer>
+
+   <script>
+        function duvida() {
+          alert('Dúvida enviada!\nEntraremos em contato pelo email');
+        }
+      </script>
+
+    </div>
 </body>
 </html>

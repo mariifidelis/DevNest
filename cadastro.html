@@ -1,62 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro | DevNest</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenest</title>
+    <link rel="icon" type="image/x-icon" href="src/img/logo.jpeg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="cadastro-page">
-  <div class="cadastro-shell">
-    <header class="cadastro-header">
-      <a class="brand" href="index.html">DevNest</a>
-      <a href="index.html" class="cad-home">Home</a>
-    </header>
 
-    <main class="cad-card">
-      <h1>CADASTRO</h1>
-      <form id="registerForm" class="cad-form">
-        <label>Nome Completo<input type="text" name="nome" required></label>
-        <label>Profissão<input type="text" name="profissao" required></label>
-        <label>Área de Atuação<input type="text" name="area" required></label>
-        <label>PJ/CPF<input type="text" name="documento" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Telefone<input type="tel" name="telefone"></label>
+<body class="topbar">
+    <div class="topbar">
 
-        <div class="location-row">
-          <label>País<input type="text" name="pais"></label>
-          <label>Cidade<input type="text" name="cidade"></label>
-          <label>Estado<input type="text" name="estado"></label>
+        <header class="header">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo Devenest">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+                    <nav class="main-nav" aria-label="Navegação principal">
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                        <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="name">
+      <h1 class="nametag">DevNest</h1>
+
+      <div class="cadastrocard">
+        <h2>Cadastro</h2>
+
+        <div id="form-feedback" role="status"
+          style="display:none; margin-bottom:20px; padding:12px 16px; border-radius:12px; background:#eaf7ee; color:#1c7a3d; font-size:0.85rem; text-align:center;">
         </div>
 
-        <label>Senha<input type="password" name="senha" required></label>
-        <label>Confirme a Senha<input type="password" name="confirmaSenha" required></label>
+        <form id="regiform" novalidate>
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Como você quer ser chamado" required>
+          </div>
 
-        <div class="cad-divider"></div>
-        <div class="photo-block">
-          <span>Foto</span>
-          <label class="photo-circle" title="Adicionar foto">
-            <input type="file" id="fotoPerfil" accept="image/*">
-            <img id="fotoPreview" alt="Prévia da foto">
-            <span class="photo-hint">+</span>
-          </label>
-        </div>
+          <div class="field">
+            <label for="profissao">Profissão</label>
+            <input type="text" id="profissao" name="profissao" placeholder="Ex: Desenvolvedor(a) Front-end" required>
+          </div>
 
-        <label>Habilidades<input type="text" name="habilidades"></label>
-        <label>Projetos Experiências<textarea name="experiencias" rows="3"></textarea></label>
-        <label>Portifólio<input type="url" name="portfolio"></label>
-        <label>LinkedIn<input type="url" name="linkedin"></label>
-        <label>Git Hub<input type="url" name="github"></label>
+          <div class="field">
+            <label for="area">Área de atuação</label>
+            <input type="text" id="area" name="area" placeholder="Ex: Web, Dados, Cyber, UI/UX">
+          </div>
 
-        <label class="terms-row">
-          <input type="checkbox" name="termos" required>
-          <span>Li e Concordo com os Termos de Política e Privacidade.</span>
-        </label>
-        <button class="cad-submit" type="submit">Cadastrar-se</button>
-      </form>
-    </main>
-    <footer class="footer cadastro-footer">DevNest</footer>
-  </div>
-  <script src="js/script.js"></script>
-</body>
-</html>
+          <div class="field">
+            <label for="pjcpf">PJ / CPF</label>
+            <input type="text" id="pjcpf" name="pjcpf" placeholder="00.000.000/0000-00 ou 000.000.000-00" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel">
+          </div>
+
+          <div class="field field-row3">
+            <div>
+              <label for="pais">País</label>
+              <input type="text" id="pais" name="pais" placeholder="País">
+            </div>
+            <div>
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Cidade">
+            </div>
+            <div>
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" name="estado" placeholder="Estado">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Mínimo de 8 caracteres"
+              autocomplete="new-password" required minlength="8">
+          </div>
+
+          <div class="field">
+            <label for="confirma-senha">Confirme a senha</label>
+            <input type="password" id="confirma-senha" name="confirma_senha" placeholder="Repita a senha"
+              autocomplete="new-password" required>
+            <span class="field-error" id="erro-senha"></span>
+          </div>
+
+          <hr class="formdiv">
+
+          <div class="photoupload">
+            <span class="photo">Foto</span>
+            <div class="photocircle" id="photocircle" role="button" tabindex="0"
+              aria-label="Selecionar foto de perfil">
+
+              <span id="avatar-placeholder-svg">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6" />
+                  <path d="M4.5 19.2c1.6-3.2 4.4-4.8 7.5-4.8s5.9 1.6 7.5 4.8" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" />
+                </svg>
+  
+              </span>
+            </div>
+            <button type="file" class="photobtn" accept="image/*">Escolher Imagem</button>
+            
+          </div>
+
+          <div class="field">
+            <label for="skills">Habilidades</label>
+            <div class="inputbox" id="skillsbox">
+              <input type="text" id="skillsinput" placeholder="Digite e pressione Enter (ex: Figma, React)">
+            </div>
+            <span class="hint">Pressione Enter ou vírgula para adicionar cada habilidade.</span>
+            <input type="hidden" id="skillshidden" name="habilidades">
+          </div>
+
+          <div class="field">
+            <label for="projetos-exp">Projetos / experiências</label>
+            <textarea id="projetos-exp" name="projetos_experiencias"
+              placeholder="Conte brevemente sobre projetos ou experiências relevantes"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="portfolio">Portfólio</label>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://seuportfolio.com">
+          </div>
+
+          <div class="field">
+            <label for="linkedin">LinkedIn</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/voce">
+          </div>
+
+          <div class="field">
+            <label for="github">GitHub</label>
+            <input type="url" id="github" name="github" placeholder="https://github.com/voce">
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Li e concordo com os <a href="#">Termos de Política e Privacidade</a>.</label>
+          </div>
+
+          <button type="submit" class="btncad">Cadastrar-se</button>
+        </form>
+      </div>
+    </div>
+  </main>
