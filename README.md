@@ -130,3 +130,9 @@ Página destinada às informações do profissional freelancer.
 #Sobre
 
 Apresenta informações sobre a proposta e o objetivo do DevNest.
+
+
+
+
+09/09 e 10/09
+Implementação de CSS no projeto e fotos.
