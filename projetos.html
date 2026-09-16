@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devenest</title>
-    <link rel="icon" type="image/x-icon" href="src/img/logo.jpeg">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,16 +15,15 @@
 
         <header class="header">
             <div class="logo">
-                <img src="../img/logo.jpeg" alt="Logo Devenest">
+                <a href="index.html"><img src="img/logo.png" alt="Logo Devenest"></a>
             </div>
             <nav class="nav">
-                <ul>
+                <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+                <ul class="main-nav" aria-label="Navegação principal">
                     <li><a href="index.html">Home</a></li>
-                    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
-                    <nav class="main-nav" aria-label="Navegação principal">
-                        <li><a href="perfil.html">Perfil</a></li>
-                        <li><a href="projetos.html">Projetos</a></li>
-                        <li><a href="login.html">Login</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
         </header>
@@ -49,139 +48,161 @@
             <section class="cards-grid">
                 <article class="project-card" data-category="web">
                     <header class="card-header"><span>Agosto, 2026</span><b>Web</b></header>
-                    <div class="card-image" style="--photo:url('../img/web.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/web.jpg'); background-image:url('img/web.jpg')"></div>
                     <h2>Landing Page para Startup</h2>
                     <p>Criação de página responsiva para uma startup da área de tecnologia.</p>
                     <footer class="card-footer"><small>TechCorp · R$ 1.800</small><a href="projeto.html"
-                            class="card-arrow" data-project="landing">→</a></footer>
+                            class="card-arrow" data-project="landing" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="dados">
                     <header class="card-header"><span>Agosto, 2026</span><b>Dados</b></header>
-                    <div class="card-image" style="--photo:url('../img/dados.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/dados.jpg'); background-image:url('img/dados.jpg')"></div>
                     <h2>Dashboard de Indicadores</h2>
                     <p>Painel para acompanhamento de métricas e indicadores do negócio.</p>
                     <footer class="card-footer"><small>DataBridge · R$ 2.500</small><a href="projeto.html"
-                            class="card-arrow" data-project="dashboard">→</a></footer>
+                            class="card-arrow" data-project="dashboard" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="uiux">
                     <header class="card-header"><span>Agosto, 2026</span><b>UI/UX</b></header>
-                    <div class="card-image" style="--photo:url('../img/uiux.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/uiux.jpg'); background-image:url('img/uiux.jpg')"></div>
                     <h2>Interface para Aplicativo</h2>
                     <p>Protótipo de telas e fluxo de navegação para aplicativo mobile.</p>
                     <footer class="card-footer"><small>AppLab · R$ 1.600</small><a href="projeto.html"
-                            class="card-arrow" data-project="app">→</a></footer>
+                            class="card-arrow" data-project="app" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
-                <article class="project-card" data-category="web">
-                    <header class="card-header"><span>Agosto, 2026</span><b>Web</b></header>
-                    <div class="card-image" style="--photo:url('../img/web.jpg')"></div>
-                    <h2>Site para Loja de Roupas</h2>
-                    <p>Site institucional com catálogo e área de contato para loja local.</p>
-                    <footer class="card-footer"><small>UrbanWear · R$ 2.000</small><a href="projeto.html"
-                            class="card-arrow" data-project="loja">→</a></footer>
+                <article class="project-card" data-category="devops">
+                    <header class="card-header"><span>Agosto, 2026</span><b>DevOps</b></header>
+                    <div class="card-image" style="--photo:url('img/devops.jpg'); background-image:url('img/devops.jpg')"></div>
+                    <h2>Implementação de CI/CD</h2>
+                    <p>Configuração de pipeline de integração e entrega contínua para projeto de software.</p>
+                    <footer class="card-footer"><small>DevFlow · R$ 2.800</small><a href="projeto.html"
+                            class="card-arrow" data-project="cicd" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="dados">
                     <header class="card-header"><span>Agosto, 2026</span><b>Dados</b></header>
-                    <div class="card-image" style="--photo:url('../img/dados.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/dados.jpg'); background-image:url('img/dados.jpg')"></div>
+                    <h2>Dashboard de Indicadores</h2>
+                    <p>Painel para acompanhamento de métricas e indicadores do negócio.</p>
+                    <footer class="card-footer"><small>DataBridge · R$ 2.500</small><a href="projeto.html"
+                            class="card-arrow" data-project="loja" aria-label="Ver detalhes do projeto">→</a></footer>
+                </article>
+                <article class="project-card" data-category="automacao">
+                    <header class="card-header"><span>Agosto, 2026</span><b>Automação</b></header>
+                    <div class="card-image" style="--photo:url('img/automacao.jpg'); background-image:url('img/automacao.jpg')"></div>
                     <h2>Automação em Python</h2>
                     <p>Automação de tarefas repetitivas e geração de relatórios internos.</p>
                     <footer class="card-footer"><small>FlowLab · R$ 3.000</small><a href="projeto.html"
-                            class="card-arrow" data-project="python">→</a></footer>
+                            class="card-arrow" data-project="python" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="cyber">
                     <header class="card-header"><span>Agosto, 2026</span><b>Cyber</b></header>
-                    <div class="card-image" style="--photo:url('../img/cyber.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/cyber.jpg'); background-image:url('img/cyber.jpg')"></div>
                     <h2>Revisão de Segurança</h2>
                     <p>Checklist de segurança, permissões e boas práticas em aplicação web.</p>
                     <footer class="card-footer"><small>SafeBit · R$ 2.800</small><a href="projeto.html"
-                            class="card-arrow" data-project="cyber">→</a></footer>
+                            class="card-arrow" data-project="cyber" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="web">
                     <header class="card-header"><span>Agosto, 2026</span><b>Web</b></header>
-                    <div class="card-image" style="--photo:url('../img/web.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/web.jpg'); background-image:url('img/web.jpg')"></div>
                     <h2>Site Institucional</h2>
                     <p>Desenvolvimento de cinco páginas responsivas para pequena empresa.</p>
                     <footer class="card-footer"><small>Clínica Vitta · R$ 2.400</small><a href="projeto.html"
-                            class="card-arrow" data-project="institucional">→</a></footer>
+                            class="card-arrow" data-project="institucional" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="uiux">
                     <header class="card-header"><span>Agosto, 2026</span><b>UI/UX</b></header>
-                    <div class="card-image" style="--photo:url('../img/uiux.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/uiux.jpg'); background-image:url('img/uiux.jpg')"></div>
                     <h2>Identidade Visual</h2>
                     <p>Definição visual e aplicação da marca em peças digitais principais.</p>
                     <footer class="card-footer"><small>Studio Nova · R$ 1.500</small><a href="projeto.html"
-                            class="card-arrow" data-project="identidade">→</a></footer>
+                            class="card-arrow" data-project="identidade" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="web">
                     <header class="card-header"><span>Agosto, 2026</span><b>Web</b></header>
-                    <div class="card-image" style="--photo:url('../img/web.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/web.jpg'); background-image:url('img/web.jpg')"></div>
                     <h2>Painel de Pedidos</h2>
                     <p>Interface simples para cadastro e atualização do status de pedidos.</p>
                     <footer class="card-footer"><small>FoodBox · R$ 2.200</small><a href="projeto.html"
-                            class="card-arrow" data-project="pedidos">→</a></footer>
+                            class="card-arrow" data-project="pedidos" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="mobile">
                     <header class="card-header"><span>Setembro, 2026</span><b>Mobile</b></header>
-                    <div class="card-image" style="--photo:url('../img/mobile.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/mobile.jpg'); background-image:url('img/mobile.jpg')"></div>
                     <h2>Aplicativo de Serviços</h2>
                     <p>Criação de fluxo mobile para contratação de serviços e acompanhamento de pedidos.</p>
-                    <footer class="card-footer"><small>MoveTech · R$ 3.200</small><a href="projeto.html" class="card-arrow" data-project="mobile">→</a></footer>
+                    <footer class="card-footer"><small>MoveTech · R$ 3.200</small><a href="projeto.html"
+                            class="card-arrow" data-project="mobile" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="ia">
                     <header class="card-header"><span>Setembro, 2026</span><b>IA</b></header>
-                    <div class="card-image" style="--photo:url('../img/ia.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/ia.jpg'); background-image:url('img/ia.jpg')"></div>
                     <h2>Assistente Inteligente</h2>
                     <p>Protótipo de assistente para organizar informações e responder dúvidas frequentes.</p>
-                    <footer class="card-footer"><small>NovaAI · R$ 4.000</small><a href="projeto.html" class="card-arrow" data-project="ia">→</a></footer>
+                    <footer class="card-footer"><small>NovaAI · R$ 4.000</small><a href="projeto.html"
+                            class="card-arrow" data-project="ia" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
                 <article class="project-card" data-category="automacao">
                     <header class="card-header"><span>Setembro, 2026</span><b>Automação</b></header>
-                    <div class="card-image" style="--photo:url('../img/automacao.jpg')"></div>
+                    <div class="card-image" style="--photo:url('img/automacao.jpg'); background-image:url('img/automacao.jpg')"></div>
                     <h2>Automação de Relatórios</h2>
                     <p>Integração de dados e geração automática de relatórios para equipes administrativas.</p>
-                    <footer class="card-footer"><small>SmartFlow · R$ 2.700</small><a href="projeto.html" class="card-arrow" data-project="automacao">→</a></footer>
+                    <footer class="card-footer"><small>SmartFlow · R$ 2.700</small><a href="projeto.html"
+                            class="card-arrow" data-project="automacao" aria-label="Ver detalhes do projeto">→</a></footer>
+                </article>
+                 <article class="project-card" data-category="mobile">
+                    <header class="card-header"><span>Setembro, 2026</span><b>Mobile</b></header>
+                    <div class="card-image" style="--photo:url('img/mobile.jpg'); background-image:url('img/mobile.jpg')"></div>
+                    <h2>Aplicativo de Serviços</h2>
+                    <p>Criação de fluxo mobile para contratação de serviços e acompanhamento de pedidos.</p>
+                    <footer class="card-footer"><small>MoveTech · R$ 3.200</small><a href="projeto.html"
+                            class="card-arrow" data-project="mobile" aria-label="Ver detalhes do projeto">→</a></footer>
+                </article>
+                   <article class="project-card" data-category="ia">
+                    <header class="card-header"><span>Setembro, 2026</span><b>IA</b></header>
+                    <div class="card-image" style="--photo:url('img/ia.jpg'); background-image:url('img/ia.jpg')"></div>
+                    <h2>Assistente de Atendimento</h2>
+                    <p>Protótipo de assistente para organizar informações e responder dúvidas frequentes.</p>
+                    <footer class="card-footer"><small>NovaAI · R$ 4.000</small><a href="projeto.html"
+                            class="card-arrow" data-project="ia" aria-label="Ver detalhes do projeto">→</a></footer>
                 </article>
             </section>
         </main>
-        
-        <footer class="footer">
+
+    <footer class="footer">
       <div class="footer_name">
-      <h3>DevNest</h3>
-      <p>Conheça um novo mundo.<br>De inovação, tecnologia e aprendizado.</p>
-      <br>
-  </div>
-    <nav class="footer_nav">
-      <h4>Navegação</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="cadastro.html">Cadastre-se</a></li>
-      </ul>
-    </nav>
-
-    <div class="footer__contact">
-      <h4>Dúvidas?</h4>
-      <div class="footer__form">
-        <input class="footer__input" type="text" placeholder="Nome" />
-        <input class="footer__input" type="email" placeholder="Email" />
-        <textarea class="footer__input footer__textarea" placeholder="Sua dúvida"></textarea>
-       <button class="button-enviar" type="button" onclick="duvida()">Enviar!</button>
+        <h3>DevNest</h3>
+        <p>Conheça um novo mundo.<br>De inovação, tecnologia e aprendizado.</p>
       </div>
-    
+
+      <nav class="footer_nav">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cadastro.html">Cadastre-se</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <h4>Dúvidas?</h4>
+        <div class="footer__form">
+          <input class="footer__input" type="text" placeholder="Nome" />
+          <input class="footer__input" type="email" placeholder="Email" />
+          <textarea class="footer__input footer__textarea" placeholder="Sua dúvida"></textarea>
+          <button class="button-enviar" type="button">Enviar!</button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 DevNest</p>
+      </div>
+    </footer>
+
     </div>
 
-    <div class="footer__bottom">
-      <p>© 2026 DevNest</p>
-    </div>
-  </footer>
-
-   <script>
-        function duvida() {
-          alert('Dúvida enviada!\nEntraremos em contato pelo email');
-        }
-      </script>
-
-    </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -5,41 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contrato Fechado | DevNest</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body.contfechado {
+            background: linear-gradient(160deg, #0a1761, #050b33);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 
-<body class="topbar">
+<body class="contfechado">
 
+    <section class="contfechado">
+        <div class="cfcheck">✓</div>
+        <h2>CONTRATO FECHADO</h2>
+        <p>O contrato foi confirmado com sucesso.</p>
+        <p>Parabéns, por fechar seu contrato!</p>
+        <p>O projeto já está disponível na sua lista de projetos ativos.</p>
+        <br>
+        <div class="contfechado_detalhes">
+            <div><span>Projeto</span><strong>Landing Page</strong></div>
+            <div><span>Valor</span><strong>R$ 1.800</strong></div>
+            <div><span>Prazo</span><strong>15 dias</strong></div>
+            <div><span>Status</span><strong>ATIVO</strong></div>
+        </div>
+        <a class="main-btn" href="projetos.html">PROJETOS</a>
+    </section>
 
-        <style>body { background: #0a1761d0; }</style>
-
-
-
-        <body class="contfechado">
-            <section class="contfechado">
-                <div class="cfcheck">✓</div>
-                <h2>CONTRATO FECHADO</h2>
-                <p>O contrato foi confirmado com sucesso.</p>
-                <p>Parabéns, por fechar seu contrato!</p>
-                <p>O projeto já está disponível na sua lista de projetos ativos.</p>
-                <br>
-                <div class="contfechado_detalhes">
-                    <div><span>Projeto</span><strong>Landing Page</strong></div>
-                    <div><span>Valor</span><strong>R$ 1.800</strong></div>
-                    <div><span>Prazo</span><strong>15 dias</strong></div>
-                    <div><span>Status</span><strong>ATIVO</strong></div>
-                </div>
-                <a class="main-btn" href="projetos.html" style="display:inline-grid;place-items:center">PROJETOS</a>
-            </section>
-
-
-           <footer class="site-footer site-footer--on-color">
+    <footer class="site-footer site-footer--on-color">
         <div class="container">
             <span class="footer-brand">DevNest</span>
             <span class="footer-meta">© 2026 DevNest. Todos os direitos reservados.</span>
         </div>
     </footer>
-                
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devenest</title>
-    <link rel="icon" type="image/x-icon" href="src/img/logo.jpeg">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,18 +15,88 @@
 
         <header class="header">
             <div class="logo">
-                <img src="assets/logo.png" alt="Logo Devenest">
+                <a href="index.html"><img src="img/logo.png" alt="Logo Devenest"></a>
             </div>
             <nav class="nav">
-                <ul>
+                <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+                <ul class="main-nav" aria-label="Navegação principal">
                     <li><a href="index.html">Home</a></li>
-                    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
-                    <nav class="main-nav" aria-label="Navegação principal">
-                        <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="projetos.html">Projetos</a></li>
-                        <li><a href="login.html">Login</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
+        </header>
+
+        <main class="mainprojeto">
+            <a class="back" href="projetos.html" aria-label="Voltar para projetos">←</a>
+            <div id="imgprojeto" class="projetoimage" style="--photo:url('img/web.jpg'); background-image:url('img/web.jpg')"></div>
+            <h1 id="titleprojeto" class="titlebox">LANDING PAGE PARA STARTUP</h1>
+            <div class="detail-meta">
+                <div><small>ORÇAMENTO</small><strong id="detailBudget">R$ 1.800</strong></div>
+                <div><small>PRAZO</small><strong id="detailDeadline">15 DIAS</strong></div>
+                <div><small>ÁREA</small><strong id="detailArea">FRONT-END</strong></div>
+            </div>
+            <div class="boxprojeto">
+                <h2 class="section-title">SOBRE O PROJETO</h2>
+                <p id="detailDescription" class="body-text">Desenvolvimento de uma landing page responsiva para uma
+                    startup de tecnologia.</p>
+
+                <h2 class="section-title">REQUISITOS</h2>
+                <ul class="body-list">
+                    <li>HTML e CSS</li>
+                    <li>JavaScript</li>
+                    <li>Layout responsivo</li>
+                    <li>Git</li>
+                </ul>
+
+                <h2 class="section-title">TECNOLOGIAS</h2>
+                <p class="body-text">HTML · CSS · JavaScript</p>
+
+                <div class="center action-space">
+                    <a href="proposta.html" class="main-btn link-btn">ENVIAR PROPOSTA</a>
+                </div>
+            </div>
+        </main>
+
+    <footer class="footer">
+      <div class="footer_name">
+        <h3>DevNest</h3>
+        <p>Conheça um novo mundo.<br>De inovação, tecnologia e aprendizado.</p>
+      </div>
+
+      <nav class="footer_nav">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cadastro.html">Cadastre-se</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <h4>Dúvidas?</h4>
+        <div class="footer__form">
+          <input class="footer__input" type="text" placeholder="Nome" />
+          <input class="footer__input" type="email" placeholder="Email" />
+          <textarea class="footer__input footer__textarea" placeholder="Sua dúvida"></textarea>
+          <button class="button-enviar" type="button">Enviar!</button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 DevNest</p>
+      </div>
+    </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
         </header>
 
         <main class="mainprojeto">

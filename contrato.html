@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devenest</title>
-    <link rel="icon" type="image/x-icon" href="src/img/logo.jpeg">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,34 +14,46 @@
     <div class="topbar">
 
         <main class="contratopg">
-            <a class="back" href="mpropostas.html">←</a>
+            <a class="back" href="mpropostas.html" aria-label="Voltar para minhas propostas">←</a>
             <h1 class="conttitle">CONTRATO</h1>
+
             <div class="detalhecont">
                 <div><small>PROJETO</small><strong>Landing Page</strong></div>
                 <div><small>VALOR</small><strong>R$ 1.800</strong></div>
                 <div><small>PRAZO</small><strong>15 dias</strong></div>
             </div>
+
             <h2 class="title">PARTES ENVOLVIDAS</h2>
             <p class="body-text">Freelancer: <span id="contfreelancer">Mariana</span></p>
             <p class="clitext">Cliente: TechCorp</p>
+
             <h2 class="section-title">TERMOS</h2>
             <ul class="contlist">
                 <li>O projeto será realizado conforme o escopo.</li>
                 <li>O prazo acordado deverá ser respeitado.</li>
                 <li>Alterações deverão ser negociadas entre as partes.</li>
             </ul>
-            <label class="contcheck"><input type="checkbox" id="contcheck"> <span>Li e concordo com os termos do contrato.</span></label>
-            <div class="center action-space"></div>
-            <a class="contractButton" href="contratofechado.html"> FECHAR CONTRATO </a>
-           
-    </main>
 
+            <label class="contcheck" for="contcheck">
+                <input type="checkbox" id="contcheck">
+                <span>Li e concordo com os termos do contrato.</span>
+            </label>
 
-       <footer class="site-footer site-footer--on-color">
-        <div class="container">
-            <span class="footer-brand">DevNest</span>
-            <span class="footer-meta">© 2026 DevNest. Todos os direitos reservados.</span>
-        </div>
-    </footer>
+            <div class="center action-space">
+                <a class="contractButton" href="contratofechado.html">FECHAR CONTRATO</a>
+            </div>
+        </main>
+
+        <footer class="site-footer site-footer--on-color">
+            <div class="container">
+                <span class="footer-brand">DevNest</span>
+                <span class="footer-meta">© 2026 DevNest. Todos os direitos reservados.</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
