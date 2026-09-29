@@ -2492,7 +2492,7 @@ video {
     }
 }
 
-/* acessibilidade: reduzir animacoes */
+/* reduzir animacoes */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -2505,7 +2505,7 @@ video {
 }
 
 
-/* ------------------------- BOTAO DE TEMA CLARO/ESCURO ------------------- */
+/* BTN CLARO/ESCURO */
 .theme-toggle {
     flex: 0 0 auto;
     width: 42px;

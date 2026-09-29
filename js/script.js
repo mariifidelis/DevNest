@@ -1,8 +1,16 @@
+/* ---------------- DEVNEST - JAVASCRIPT ----------------
+   funções e interações do site
+*/
+
 (function () {
     'use strict';
 
+    /* ---------------- SELETORES ---------------- */
+
     var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
     var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+
+    /* ---------------- MENU ---------------- */
 
     function initMenu() {
         $$('.menu-toggle, .nav-toggle').forEach(function (toggle) {
@@ -33,6 +41,8 @@
         });
     }
 
+    /* ---------------- VIDEO ---------------- */
+
     function initVideo() {
         $$('video[autoplay]').forEach(function (video) {
             video.muted = true;
@@ -59,6 +69,8 @@
         });
     }
 
+    /* ---------------- FILTROS DE PROJETOS ---------------- */
+
     function initFiltros() {
         var botoes = $$('.filter-btn');
         var cards = $$('.project-card');
@@ -78,6 +90,8 @@
             });
         });
     }
+
+    /* ---------------- CARDS DE PROJETOS ---------------- */
 
     function initCardsProjeto() {
         $$('.project-card .card-arrow').forEach(function (link) {
@@ -115,6 +129,8 @@
         });
     }
 
+    /* ---------------- DETALHES DO PROJETO ---------------- */
+
     function initDetalheProjeto() {
         var titulo = document.getElementById('titleprojeto');
         if (!titulo) { return; }
@@ -140,10 +156,13 @@
         if (descricao && dados.descricao) { descricao.textContent = dados.descricao; }
     }
 
+    /* ---------------- LOGIN ---------------- */
+
     function initLogin() {
         var form = document.getElementById('loginform');
         if (!form) { return; }
 
+        /* validação do cadastro */
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -178,6 +197,8 @@
             });
         });
     }
+
+    /* ---------------- CADASTRO ---------------- */
 
     function initCadastro() {
         var form = document.getElementById('regiform');
@@ -222,6 +243,7 @@
             });
         }
 
+        /* habilidades */
         var caixaSkills = document.getElementById('skillsbox');
         var inputSkills = document.getElementById('skillsinput');
         var hiddenSkills = document.getElementById('skillshidden');
@@ -277,6 +299,7 @@
             });
         }
 
+        /* confirmação de senha */
         function conferirSenha() {
             if (!senha || !confirma) { return true; }
             if (confirma.value === '') {
@@ -354,6 +377,8 @@
         });
     }
 
+    /* ---------------- PROPOSTA ---------------- */
+
     function initProposta() {
         var form = document.getElementById('propostaForm');
         if (!form) { return; }
@@ -408,6 +433,8 @@
         });
     }
 
+    /* ---------------- CONTRATO ---------------- */
+
     function initContrato() {
         var check = document.getElementById('contcheck');
         var botao = $('.contractButton');
@@ -437,6 +464,8 @@
         });
     }
 
+    /* ---------------- DÚVIDAS ---------------- */
+
     function initDuvida() {
         $$('.button-enviar').forEach(function (botao) {
             botao.addEventListener('click', function () {
@@ -457,9 +486,13 @@
         });
     }
 
+    /* ---------------- ENVIO DE DÚVIDA ---------------- */
+
     window.duvida = function () {
         alert('Dúvida enviada!\nEntraremos em contato pelo email');
     };
+
+    /* ---------------- ANO DO RODAPÉ ---------------- */
 
     function initAno() {
         var ano = new Date().getFullYear();
@@ -467,6 +500,8 @@
             el.textContent = el.textContent.replace(/\b20\d{2}\b/, ano);
         });
     }
+
+    /* ---------------- TEMA CLARO / ESCURO ---------------- */
 
     var CHAVE_TEMA = 'devnest-theme';
 
@@ -526,6 +561,8 @@
             else if (mq.addListener) { mq.addListener(aoMudar); }
         }
     }
+
+    /* ---------------- INICIALIZAÇÃO ---------------- */
 
     function init() {
         initMenu();
