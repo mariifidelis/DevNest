@@ -146,3 +146,9 @@ Implementação de CSS no projeto e fotos.
 -Fotos e Videos
 -Ajuste de responsividade 
 
+
+
+15/10 - wireframe
+<img width="897" height="454" alt="image" src="https://github.com/user-attachments/assets/e82955b4-b814-4d09-8ec7-087e8fb33ade" />
+
+
