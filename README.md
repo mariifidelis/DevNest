@@ -148,7 +148,8 @@ Implementação de CSS no projeto e fotos.
 
 
 
-15/10 - wireframe
+15/10 - wireframe com tutorial (aproveitamento do tutorial acima)
+Esse wireframe é referente a ideia inicial básica, por isso não contém todas as telas e informações mais recentes.
 <img width="897" height="454" alt="image" src="https://github.com/user-attachments/assets/e82955b4-b814-4d09-8ec7-087e8fb33ade" />
 
 
