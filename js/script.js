@@ -1,16 +1,12 @@
-/* ---------------- DEVNEST - JAVASCRIPT ----------------
-   funções e interações do site
-*/
-
 (function () {
     'use strict';
 
-    /* ---------------- SELETORES ---------------- */
+    /* SELETORES */
 
     var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
     var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
-    /* ---------------- MENU ---------------- */
+    /* MENU*/
 
     function initMenu() {
         $$('.menu-toggle, .nav-toggle').forEach(function (toggle) {
@@ -41,7 +37,7 @@
         });
     }
 
-    /* ---------------- VIDEO ---------------- */
+    /* VIDEO*/
 
     function initVideo() {
         $$('video[autoplay]').forEach(function (video) {
@@ -69,7 +65,7 @@
         });
     }
 
-    /* ---------------- FILTROS DE PROJETOS ---------------- */
+    /* FILTROS DE PROJETOS */
 
     function initFiltros() {
         var botoes = $$('.filter-btn');
@@ -91,7 +87,7 @@
         });
     }
 
-    /* ---------------- CARDS DE PROJETOS ---------------- */
+    /* CARDS DE PROJETOS */
 
     function initCardsProjeto() {
         $$('.project-card .card-arrow').forEach(function (link) {
@@ -129,7 +125,7 @@
         });
     }
 
-    /* ---------------- DETALHES DO PROJETO ---------------- */
+    /* DETALHES DO PROJETO */
 
     function initDetalheProjeto() {
         var titulo = document.getElementById('titleprojeto');
@@ -156,7 +152,7 @@
         if (descricao && dados.descricao) { descricao.textContent = dados.descricao; }
     }
 
-    /* ---------------- LOGIN ---------------- */
+    /* LOGIN */
 
     function initLogin() {
         var form = document.getElementById('loginform');
@@ -198,7 +194,7 @@
         });
     }
 
-    /* ---------------- CADASTRO ---------------- */
+    /*CADASTRO*/
 
     function initCadastro() {
         var form = document.getElementById('regiform');
@@ -377,7 +373,7 @@
         });
     }
 
-    /* ---------------- PROPOSTA ---------------- */
+    /*PROPOSTA*/
 
     function initProposta() {
         var form = document.getElementById('propostaForm');
@@ -433,7 +429,7 @@
         });
     }
 
-    /* ---------------- CONTRATO ---------------- */
+    /* CONTRATO */
 
     function initContrato() {
         var check = document.getElementById('contcheck');
@@ -464,7 +460,7 @@
         });
     }
 
-    /* ---------------- DÚVIDAS ---------------- */
+    /* DÚVIDAS*/
 
     function initDuvida() {
         $$('.button-enviar').forEach(function (botao) {
@@ -486,13 +482,11 @@
         });
     }
 
-    /* ---------------- ENVIO DE DÚVIDA ---------------- */
+    /* FOOTER - DUVIDA E ANO*/
 
     window.duvida = function () {
         alert('Dúvida enviada!\nEntraremos em contato pelo email');
     };
-
-    /* ---------------- ANO DO RODAPÉ ---------------- */
 
     function initAno() {
         var ano = new Date().getFullYear();
@@ -501,7 +495,7 @@
         });
     }
 
-    /* ---------------- TEMA CLARO / ESCURO ---------------- */
+    /*TEMA CLARO / ESCURO */
 
     var CHAVE_TEMA = 'devnest-theme';
 
@@ -562,7 +556,7 @@
         }
     }
 
-    /* ---------------- INICIALIZAÇÃO ---------------- */
+    /* INICIALIZAÇÃO */
 
     function init() {
         initMenu();
