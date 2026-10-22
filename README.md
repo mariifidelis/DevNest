@@ -153,3 +153,4 @@ Esse wireframe é referente a ideia inicial básica, por isso não contém todas
 <img width="897" height="454" alt="image" src="https://github.com/user-attachments/assets/e82955b4-b814-4d09-8ec7-087e8fb33ade" />
 
 
+22/10 - Passar de html e css para react e css global.
