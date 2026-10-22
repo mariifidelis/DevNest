@@ -1,9 +1,9 @@
 //Ana Carolina - 10771387         |Mariana Fidelis - 10721308
 
-"use client";
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -59,7 +59,7 @@ export default function Home() {
                 <p>Desenvolvimento de uma plataforma online para cursos e treinamentos.</p>
               </div>
             </div>
-            <a href="/projetos" className="btn">Ver todos os projetos</a>
+            <Link href="/projetos" className="btn">Ver todos os projetos</Link>
           </div>
         </section>
 
