@@ -37,6 +37,18 @@ export default function Cadastro() {
         setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
     };
 
+    function adicionarSkill() {
+        const nome = skillInput.trim();
+        if (nome !== "" && !habilidades.includes(nome)) {
+            setHabilidades([...habilidades, nome]);
+        }
+        setSkillInput("");
+    }
+
+    function removerSkill(nome) {
+        setHabilidades(habilidades.filter((habilidade) => habilidade !== nome));
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Formulário enviado! Verifique o console do navegador.");
@@ -144,6 +156,33 @@ export default function Cadastro() {
                         </div>
 
                         <div className="field">
+                            <label htmlFor="skillsinput">Habilidades</label>
+                            <div className="inputbox" id="skillsbox">
+                                {habilidades.map((nome) => (
+                                    <span className="chip" key={nome}>
+                                        {nome}
+                                        <button type="button" onClick={() => removerSkill(nome)}>×</button>
+                                    </span>
+                                ))}
+                                <input
+                                    type="text"
+                                    id="skillsinput"
+                                    placeholder="Digite e pressione Enter (ex: Figma, React)"
+                                    value={skillInput}
+                                    onChange={(e) => setSkillInput(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter" || e.key === ",") {
+                                            e.preventDefault();
+                                            adicionarSkill();
+                                        }
+                                    }}
+                                />
+                            </div>
+                            <span className="hint">Pressione Enter ou vírgula para adicionar cada habilidade.</span>
+                            <input type="hidden" name="habilidades" value={habilidades.join(", ")} readOnly />
+                        </div>
+
+                        <div className="field">
                             <label htmlFor="projetos-exp">Projetos / experiências</label>
                             <textarea id="projetos-exp" name="projetos_experiencias" placeholder="Conte brevemente sobre projetos ou experiências relevantes" onChange={handleChange}></textarea>
                         </div>
@@ -175,5 +214,4 @@ export default function Cadastro() {
         </div>
     );
 }
-
 
