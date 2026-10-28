@@ -17,185 +17,163 @@ export default function Cadastro() {
         cidade: "",
         estado: "",
         senha: "",
-        confirmarSenha: "",
-        projetosExperiencias: "",
-        portifolio: "",
+        confirma_senha: "",
+        projetos_experiencias: "",
+        portfolio: "",
         linkedin: "",
         github: "",
-        termos: false,
-        languages: [],
+        termos: false
     });
 
-    const [feedback, setfeedback] = useState("");
+    const [habilidades, setHabilidades] = useState([]);
+    const [skillInput, setSkillInput] = useState("");
+    const [feedback, setFeedback] = useState({ message: "", type: "" });
 
-    const handleChange = (event) => {
-        const { name, value, type, checked } = event.target;
 
-        if (name === "languages") {
-            let listaHabilidades = [...formData.languages];
 
-            if (checked) {
-                listaHabilidades.push(value);
-            }
-            else {
-                listaHabilidades = listaHabilidades.filter((item) => item !== value);
-            }
 
-            setFormData({ ...formData, languages: listaHabilidades });
-        } else {
-            setDataForm({ ...dataForm, [name]: type === "checkbox" ? checked : value });
-        }
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert("Formulário enviado! Verifique o console do navegador.");
+        console.log(formData);
+    };
 
-        if (!dataForm.nome || !dataForm.email || !dataForm.senha) {
-            setfeedback("Por favor, preencha todos os campos obrigatórios.");
+    return (
+        <div className="topbar">
+            <header className="header">
+                <div className="logo">
+                    <Link href="/">
+                        <img src="img/logo.png" alt="Logo Devenest" />
+                    </Link>
+                </div>
+                <nav className="nav">
+                    <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+                    <ul className="main-nav" aria-label="Navegação principal">
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/projetos">Projetos</Link></li>
+                        <li><Link href="/login">Login</Link></li>
+                    </ul>
+                </nav>
+            </header>
 
-            setTimeout(() => {
-                setfeedback("");
-            }, 4000);
-            return;
-        };
+            <main className="name">
+                <div className="login-blob b1" aria-hidden="true"></div>
+                <div className="login-blob b2" aria-hidden="true"></div>
+                <div className="login-blob b3" aria-hidden="true"></div>
 
-        return (
-            <div className="topbar">
-                <header className="header">
-                    <div className="logo">
-                        <Link href="/page">
-                            <img src="img/logo.png" alt="Logo Devenest" />
-                        </Link>
-                    </div>
-                    <nav className="nav">
-                        <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
-                        <ul className="main-nav" aria-label="Navegação principal">
-                            <li><Link href="/page">Home</Link></li>
-                            <li><Link href="/projetos">Projetos</Link></li>
-                            <li><Link href="/login">Login</Link></li>
-                        </ul>
-                    </nav>
-                </header>
-                <main className="name">
-                    <div className="login-blob b1" aria-hidden="true"></div>
-                    <div className="login-blob b2" aria-hidden="true"></div>
-                    <div className="login-blob b3" aria-hidden="true"></div>
+                <h1 className="nametag">DevNest</h1>
 
-                    <h1 className="nametag">DevNest</h1>
+                <div className="cadastrocard">
+                    <h2>Cadastro</h2>
 
-                    <div className="cadastroCard">
-                        <h2>Cadastro</h2>
+                    <form id="regiform" onSubmit={handleSubmit} noValidate>
+                        <div className="field">
+                            <label htmlFor="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Como você quer ser chamado" required onChange={handleChange} />
+                        </div>
 
-                        {feedback && (
-                            <div role="status" style={{ marginBottom: "20px", padding: "12px", borderRadius: "12px", background: "#fdeded", color: "#da1e28", textAlign: "center" }}>
-                                {feedback}
+                        <div className="field">
+                            <label htmlFor="profissao">Profissão</label>
+                            <input type="text" id="profissao" name="profissao" placeholder="Ex: Desenvolvedor(a) Front-end" required onChange={handleChange} />
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="area">Área de atuação</label>
+                            <input type="text" id="area" name="area" placeholder="Ex: Web, Dados, Cyber, UI/UX" onChange={handleChange} />
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="pjcpf">PJ / CPF</label>
+                            <input type="text" id="pjcpf" name="pjcpf" placeholder="00.000.000/0000-00 ou 000.000.000-00" required onChange={handleChange} />
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="voce@email.com" autoComplete="email" required onChange={handleChange} />
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" autoComplete="tel" onChange={handleChange} />
+                        </div>
+
+                        <div className="field field-row3">
+                            <div>
+                                <label htmlFor="pais">País</label>
+                                <input type="text" id="pais" name="pais" placeholder="País" onChange={handleChange} />
                             </div>
-                        )}
-
-                        <form id="regiform" onSubmit={handleSubmit} noValidate>
-                            <div className="field">
-                                <label htmlFor="nome">Nome completo</label>
-                                <input type="text" id="nome" name="nome" placeholder="Como você quer ser chamado" required value={dataForm.nome} onChange={handleChange} />
+                            <div>
+                                <label htmlFor="cidade">Cidade</label>
+                                <input type="text" id="cidade" name="cidade" placeholder="Cidade" onChange={handleChange} />
                             </div>
-
-                            <div className="field">
-                                <label htmlFor="profissao">Profissão</label>
-                                <input type="text" id="profissao" name="profissao" placeholder="Ex: Desenvolvedor(a) Front-end" required value={dataForm.profissao} onChange={handleChange} />
+                            <div>
+                                <label htmlFor="estado">Estado</label>
+                                <input type="text" id="estado" name="estado" placeholder="Estado" onChange={handleChange} />
                             </div>
+                        </div>
 
-                            <div className="field">
-                                <label htmlFor="area">Área de atuação</label>
-                                <input type="text" id="area" name="area" placeholder="Ex: Web, Dados, Cyber, UI/UX" value={dataForm.area} onChange={handleChange} />
+                        <div className="field">
+                            <label htmlFor="senha">Senha</label>
+                            <input type="password" id="senha" name="senha" placeholder="Mínimo de 8 caracteres" autoComplete="new-password" required minLength="8" onChange={handleChange} />
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="confirma-senha">Confirme a senha</label>
+                            <input type="password" id="confirma-senha" name="confirma_senha" placeholder="Repita a senha" autoComplete="new-password" required onChange={handleChange} />
+                        </div>
+
+                        <hr className="formdiv" />
+
+                        <div className="photoupload">
+                            <span className="photo">Foto</span>
+                            <div className="photocircle" id="photocircle" role="button" tabIndex="0" aria-label="Selecionar foto de perfil">
+                                <span>
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                                        <circle cx="12" cy="8" r="3.4" stroke="currentColor" strokeWidth="1.6" />
+                                        <path d="M4.5 19.2c1.6-3.2 4.4-4.8 7.5-4.8s5.9 1.6 7.5 4.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                                    </svg>
+                                </span>
                             </div>
+                            <button type="button" className="photobtn">Escolher Imagem</button>
+                            <input type="file" id="photoinput" accept="image/*" style={{ display: "none" }} />
+                        </div>
 
-                            <div className="field">
-                                <label htmlFor="pjcpf">PJ / CPF</label>
-                                <input type="text" id="pjcpf" name="pjcpf" placeholder="00.000.000/0000-00 ou 000.000.000-00" required value={dataForm.pjcpf} onChange={handleChange} />
-                            </div>
+                        <div className="field">
+                            <label htmlFor="projetos-exp">Projetos / experiências</label>
+                            <textarea id="projetos-exp" name="projetos_experiencias" placeholder="Conte brevemente sobre projetos ou experiências relevantes" onChange={handleChange}></textarea>
+                        </div>
 
-                            <div className="field">
-                                <label htmlFor="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="voce@email.com" autoComplete="email" required value={dataForm.email} onChange={handleChange} />
-                            </div>
+                        <div className="field">
+                            <label htmlFor="portfolio">Portfólio</label>
+                            <input type="url" id="portfolio" name="portfolio" placeholder="https://seuportfolio.com" onChange={handleChange} />
+                        </div>
 
-                            <div className="field">
-                                <label htmlFor="telefone">Telefone</label>
-                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" autoComplete="tel" value={dataForm.telefone} onChange={handleChange} />
-                            </div>
+                        <div className="field">
+                            <label htmlFor="linkedin">LinkedIn</label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com" onChange={handleChange} />
+                        </div>
 
-                            <div className="field field-row3">
-                                <div>
-                                    <label htmlFor="pais">País</label>
-                                    <input type="text" id="pais" name="pais" placeholder="País" value={dataForm.pais} onChange={handleChange} />
-                                </div>
-                                <div>
-                                    <label htmlFor="cidade">Cidade</label>
-                                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" value={dataForm.cidade} onChange={handleChange} />
-                                </div>
-                                <div>
-                                    <label htmlFor="estado">Estado</label>
-                                    <input type="text" id="estado" name="estado" placeholder="Estado" value={dataForm.estado} onChange={handleChange} />
-                                </div>
-                            </div>
+                        <div className="field">
+                            <label htmlFor="github">GitHub</label>
+                            <input type="url" id="github" name="github" placeholder="https://github.com" onChange={handleChange} />
+                        </div>
 
-                            <div className="field">
-                                <label htmlFor="senha">Senha</label>
-                                <input type="password" id="senha" name="senha" placeholder="Mínimo de 8 caracteres" autoComplete="new-password" required minLength="8" value={dataForm.senha} onChange={handleChange} />
-                            </div>
+                        <div className="checkbox-row">
+                            <input type="checkbox" id="termos" name="termos" onChange={handleChange} required />
+                            <label htmlFor="termos">Li e concordo com os <a href="#">Termos de Política e Privacidade</a>.</label>
+                        </div>
 
-                            <div className="field">
-                                <label htmlFor="confirma-senha">Confirme a senha</label>
-                                <input type="password" id="confirma-senha" name="confirma_senha" placeholder="Repita a senha" autoComplete="new-password" required value={dataForm.confirma_senha} onChange={handleChange} />
-                            </div>
-
-                            <hr className="formdiv" />
-
-                            <div className="field">
-                                <label>Habilidades Selecionadas</label>
-                                <div className="checkbox-group" style={{ display: "flex", gap: "15px", margin: "10px 0" }}>
-                                    <label>
-                                        <input type="checkbox" name="languages" value="React" checked={dataForm.languages.includes("React")} onChange={handleChange} /> React
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="languages" value="Figma" checked={dataForm.languages.includes("Figma")} onChange={handleChange} /> Figma
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="languages" value="CSS" checked={dataForm.languages.includes("CSS")} onChange={handleChange} /> CSS
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div className="field">
-                                <label htmlFor="projetos-exp">Projetos / experiências</label>
-                                <textarea id="projetos-exp" name="projetos_experiencias" placeholder="Conte brevemente sobre projetos ou experiências relevantes" value={dataForm.projetos_experiencias} onChange={handleChange} />
-                            </div>
-
-                            <div className="field">
-                                <label htmlFor="portfolio">Portfólio</label>
-                                <input type="url" id="portfolio" name="portfolio" placeholder="https://seuportfolio.com" value={dataForm.portfolio} onChange={handleChange} />
-                            </div>
-                            <div className="field">
-                                <label htmlFor="linkedin">LinkedIn</label>
-                                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com" value={dataForm.linkedin} onChange={handleChange} />
-                            </div>
-                            <div className="field">
-                                <label htmlFor="github">GitHub</label>
-                                <input type="url" id="github" name="github" placeholder="https://github.com" value={dataForm.github} onChange={handleChange} />
-                            </div>
-
-                            <div className="checkbox-row">
-                                <input type="checkbox" id="termos" name="termos" required checked={dataForm.termos} onChange={handleChange} />
-                                <label htmlFor="termos">Li e concordo com os <a href="#">Termos de Política e Privacidade</a>.</label>
-                            </div>
-
-                            <button type="submit" className="btncad">Cadastrar-se</button>
-
-                        </form>
-                    </div>
-                </main>
-            </div>
-        );
-    }
+                        <button type="submit" className="btncad">Cadastrar-se</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    );
 }
 
 

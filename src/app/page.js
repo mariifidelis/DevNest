@@ -68,7 +68,7 @@ export default function Home() {
             <h2>Cadastre-se na DevNest e venha fazer parte de um novo mundo de oportunidades</h2>
             <img src="/img/home6.jpeg" className="cadastro-img" alt="Profissionais de tecnologia trabalhando"/>
             <p>Junte-se à nossa comunidade de profissionais e descubra novas oportunidades de trabalho.</p>
-            <a href="/cadastro" className="btn">Cadastre-se</a>
+            <Link href="/components/cadastro/Cadastro.jsx" className="btn">Cadastre-se</Link>
           </div>
         </section>
       </main>
