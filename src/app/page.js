@@ -38,7 +38,7 @@ export default function Home() {
               tecnologia com oportunidades de trabalho, promovendo o crescimento
               profissional e o desenvolvimento de projetos de impacto.
             </p>
-            <a href="/sobre" className="btn">Saiba mais</a>
+            <Link href="/sobre" className="btn">Saiba mais</Link>
           </div>
         </section>
 
