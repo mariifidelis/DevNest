@@ -1,7 +1,7 @@
 //Ana Carolina - 10771387         |Mariana Fidelis - 10721308
 
 import React from 'react';
-import './Card.module.css';
+import styles from './Card.module.css';
 
 export default function Card({ title, children }) {
   return (
