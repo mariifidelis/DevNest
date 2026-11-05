@@ -157,3 +157,6 @@ Esse wireframe é referente a ideia inicial básica, por isso não contém todas
 
 28/10 - Implementação da pagina cadastro e do components card,
 A ia foi usada para auxiliar nos ajustes de erro, na página de cadastro pois ela não estava carregando e foi dado como sugestão criar uma pasta no src/app/cadastro.jsx e dentro deste arquivo só chamar a página do component.
+
+
+05/11 - Implementação das paginas e separação do footer e header nas paginas que são diferentes, e término da passagem das paginas para o react. 
