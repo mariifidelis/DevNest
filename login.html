@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenest</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="login">
+
+    <main class="login">
+        <div class="login-blob b1" aria-hidden="true"></div>
+        <div class="login-blob b2" aria-hidden="true"></div>
+        <div class="login-blob b3" aria-hidden="true"></div>
+
+        <h1 class="login_icon"><a href="index.html">DevNest</a></h1>
+        <p class="login_tagline">Conecte-se. Crie. Evolua.</p>
+
+        <div class="logincard">
+            <form class="loginform" id="loginform" novalidate>
+                <div class="cardform">
+                    <label for="login-user" class="eyebrow-hide">Email ou nome de usuário</label>
+                    <input type="text" id="login-user" name="usuario" placeholder="EMAIL/NOME DE USUÁRIO"
+                        autocomplete="username" required>
+                </div>
+                <div class="cardform">
+                    <label for="login-pass" class="eyebrow-hide">Senha</label>
+                    <input type="password" id="login-pass" name="senha" placeholder="SENHA"
+                        autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Entrar</button>
+            </form>
+
+            <p class="loginalt">Não possui conta? <a href="cadastro.html">Cadastre-se</a></p>
+
+            <div class="divideror">ou</div>
+
+            <div class="sociallogin">
+                <button type="button" class="social-btn" aria-label="Entrar com Google">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="7" y="17" font-family="JetBrains Mono, monospace" font-size="17" font-weight="700"
+                            fill="#717CB7">G</text>
+                    </svg>
+                </button>
+                <button type="button" class="social-btn" aria-label="Entrar com Apple">
+                    <svg viewBox="0 0 24 24" fill="#717CB7" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.36 12.65c-.02-2.02 1.65-2.99 1.72-3.03-.94-1.37-2.4-1.56-2.92-1.58-1.24-.13-2.42.73-3.05.73-.63 0-1.6-.71-2.63-.69-1.35.02-2.6.78-3.29 1.99-1.4 2.44-.36 6.05 1 8.03.67.97 1.46 2.05 2.5 2.01 1-.04 1.38-.65 2.6-.65s1.56.65 2.63.63c1.09-.02 1.77-.98 2.43-1.96.77-1.12 1.08-2.21 1.1-2.27-.02-.01-2.1-.81-2.09-3.21zM14.4 5.62c.55-.68.93-1.6.83-2.53-.8.03-1.77.53-2.34 1.2-.51.6-.96 1.55-.84 2.46.9.07 1.8-.45 2.35-1.13z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
