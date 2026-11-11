@@ -1,0 +1,324 @@
+
+/* DETALHES DO PROJETO E PROPOSTA */
+
+.mainprojeto,
+.mainproposta,
+.propostapg {
+    padding: clamp(40px, 6vw, 60px) 0 90px;
+}
+
+.mainprojeto,
+.mainproposta {
+    max-width: 900px;
+}
+
+.back {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--chip-text);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-soft);
+    transition: .2s ease;
+}
+
+.back:hover {
+    background: var(--blue);
+    color: #fff;
+    transform: translateX(-3px);
+}
+
+.projetoimage {
+    width: 100%;
+    height: clamp(200px, 34vw, 380px);
+    border-radius: 28px;
+    background-image: var(--photo);
+    background-size: cover;
+    background-position: center;
+    background-color: var(--skeleton);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.titlebox {
+    margin-bottom: 25px;
+}
+
+.detail-meta,
+.detalhecont {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 40px;
+}
+
+.detail-meta > div,
+.detalhecont > div {
+    padding: 22px;
+    border-right: 1px solid var(--line);
+}
+
+.detail-meta > div:last-child,
+.detalhecont > div:last-child {
+    border-right: 0;
+}
+
+.detail-meta small,
+.detalhecont small {
+    display: block;
+    color: var(--muted);
+    font-size: .68rem;
+    letter-spacing: .12em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.detail-meta strong,
+.detalhecont strong {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.boxprojeto {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 25px;
+    padding: clamp(24px, 4vw, 36px);
+    box-shadow: var(--shadow-soft);
+}
+
+.section-title,
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: .08em;
+    color: var(--chip-text);
+    margin: 32px 0 12px;
+}
+
+.boxprojeto > .section-title:first-of-type {
+    margin-top: 0;
+}
+
+.body-text,
+.body-list,
+.contlist,
+.clitext {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.body-list,
+.contlist {
+    padding-left: 20px;
+}
+
+.body-list li,
+.contlist li {
+    margin: 7px 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.action-space {
+    margin-top: 42px;
+}
+
+/* FORMULÁRIO DA PROPOSTA */
+
+.propostaformbox {
+    margin-top: 25px;
+    padding: clamp(22px, 4vw, 36px);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+}
+
+.mainproposta > .body-text {
+    margin-top: 12px;
+    max-width: 640px;
+}
+
+.form-row {
+    margin-top: 18px;
+}
+
+.form-row label {
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--text-soft);
+    letter-spacing: .08em;
+    margin-bottom: 7px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--input-bg);
+    color: var(--text);
+    border-radius: 13px;
+    padding: 13px 15px;
+    outline: none;
+    transition: .2s ease;
+}
+
+.form-input[readonly] {
+    background: var(--surface-2);
+    color: var(--muted);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--blue-3);
+    background: var(--surface);
+    box-shadow: 0 0 0 4px rgba(102, 116, 223, .10);
+}
+
+.form-input.invalid,
+.form-textarea.invalid {
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px rgba(217, 76, 99, .10);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* MINHAS PROPOSTAS */
+
+.propostapg {
+    max-width: 1000px;
+}
+
+.pgtitle {
+    margin-bottom: 35px;
+}
+
+.mpgtitle {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.propostas {
+    display: grid;
+    gap: 14px;
+}
+
+.propostaslista {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) auto auto auto;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 19px;
+    box-shadow: var(--shadow-soft);
+    transition: .22s ease;
+}
+
+.propostaslista:hover {
+    transform: translateX(4px);
+    border-color: var(--line-hover);
+    box-shadow: var(--shadow);
+}
+
+.propostaslista h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.propostaslista p {
+    color: var(--muted);
+    font-size: .83rem;
+    margin-top: 3px;
+}
+
+.status {
+    color: var(--ok-text);
+    background: var(--ok-bg);
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.propostaslista strong {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 720px) {
+    .mainprojeto,
+    .mainproposta,
+    .propostapg {
+        padding-top: 38px;
+        padding-bottom: 60px;
+    }
+
+    .detail-meta,
+    .detalhecont {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-meta > div,
+    .detalhecont > div {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .detail-meta > div:last-child,
+    .detalhecont > div:last-child {
+        border-bottom: 0;
+    }
+
+    .propostaslista {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+    }
+
+    .propostaslista strong {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .propostaslista .card-arrow,
+    .propostaslista > span:last-child {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .status {
+        justify-self: end;
+    }
+}
