@@ -1,3 +1,4 @@
+
 {
   "name": "devnest",
   "version": "0.1.0",
@@ -6,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "api": "json-server --watch db.json --host 0.0.0.0 --port 3001"
   },
   "dependencies": {
     "next": "16.4.1",
@@ -15,6 +17,7 @@
   },
   "devDependencies": {
     "eslint": "^9",
-    "eslint-config-next": "16.4.1"
+    "eslint-config-next": "16.4.1",
+    "json-server": "^0.17.4"
   }
 }

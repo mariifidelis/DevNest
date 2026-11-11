@@ -13,8 +13,6 @@ export default function Cadastro() {
   const [feedback, setFeedback] = useState({ message: "", type: "" });
 
   const [foto, setFoto] = useState("");
-  // useEffect executa esta parte depois de mostrar a mensagem de sucesso.
-  // Se a pessoa sair da página, o retorno cancela o redirecionamento.
   useEffect(
     function () {
       if (feedback.type === "success") {
@@ -71,7 +69,6 @@ export default function Cadastro() {
     }
   }
 
-  // Os outros campos são lidos diretamente do formulário na validação.
   function atualizarCampo(evento) {
     const campo = evento.target;
     if (campo.name === "senha") {
@@ -101,43 +98,90 @@ export default function Cadastro() {
     setHabilidades(novaLista);
   }
 
-  function enviarCadastro(e) {
-    e.preventDefault();
-    // Procura os campos obrigatórios do formulário.
-    const obrigatorios = e.currentTarget.querySelectorAll("[required]");
-    let primeiroErro = null;
-    for (let i = 0; i < obrigatorios.length; i++) {
-      const campo = obrigatorios[i];
-      let valido = campo.value.trim() !== "";
-      if (campo.type === "checkbox") {
-        valido = campo.checked;
-      }
-      if (campo.type === "email" && valido)
-        valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value.trim());
-      if (campo.id === "senha" && valido) valido = campo.value.length >= 8;
-      if (campo.id === "confirma-senha")
-        valido = valido && senha === confirmaSenha;
-      campo.classList.toggle("invalid", !valido);
-      if (!valido && !primeiroErro) {
-        primeiroErro = campo;
-      }
+  async function enviarCadastro(e) {
+  e.preventDefault();
+
+  const obrigatorios = e.currentTarget.querySelectorAll("[required]");
+  let primeiroErro = null;
+
+  for (let i = 0; i < obrigatorios.length; i++) {
+    const campo = obrigatorios[i];
+    let valido = campo.value.trim() !== "";
+
+    if (campo.type === "checkbox") {
+      valido = campo.checked;
     }
-    if (primeiroErro) {
-      setFeedback({
-        message: "Revise os campos destacados antes de continuar.",
-        type: "error",
-      });
-      primeiroErro.scrollIntoView({ behavior: "smooth", block: "center" });
-      primeiroErro.focus({ preventScroll: true });
-      return;
+
+    if (campo.type === "email" && valido) {
+      valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value.trim());
     }
-    setFeedback({
-      message:
-        "Cadastro realizado com sucesso! Redirecionando para o seu perfil...",
-      type: "success",
-    });
+
+    if (campo.id === "senha" && valido) {
+      valido = campo.value.length >= 8;
+    }
+
+    if (campo.id === "confirma-senha") {
+      valido = valido && senha === confirmaSenha;
+    }
+
+    campo.classList.toggle("invalid", !valido);
+
+    if (!valido && !primeiroErro) {
+      primeiroErro = campo;
+    }
   }
 
+  if (primeiroErro) {
+    setFeedback({
+      message: "Revise os campos destacados antes de continuar.",
+      type: "error",
+    });
+
+    primeiroErro.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+    primeiroErro.focus({ preventScroll: true });
+    return;
+  }
+
+  try {
+    const formulario = new FormData(e.currentTarget);
+    const usuario = Object.fromEntries(formulario.entries());
+
+    delete usuario.confirma_senha;
+    delete usuario.termos;
+
+    usuario.habilidades = habilidades;
+    usuario.foto = foto;
+
+    const resposta = await fetch("http://localhost:3001/usuarios", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+
+    if (!resposta.ok) {
+      throw new Error("Erro ao cadastrar usuário.");
+    }
+
+    setFeedback({
+      message: "Cadastro realizado com sucesso! Redirecionando para o seu perfil...",
+      type: "success",
+    });
+
+  } catch (erro) {
+    console.error("Erro no cadastro:", erro);
+
+    setFeedback({
+      message: "Não foi possível realizar o cadastro. Verifique se a API está funcionando.",
+      type: "error",
+    });
+  }
+}
   return (
     <div className="topbar">
       <main className="name">

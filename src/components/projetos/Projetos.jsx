@@ -1,318 +1,262 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Projetos() {
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("all");
 
-  useEffect(() => {
-    const cards = document.querySelectorAll(".project-card");
+  const filtros = [
+    { id: "all", nome: "Todos" },
+    { id: "web", nome: "Web" },
+    { id: "dados", nome: "Dados" },
+    { id: "cyber", nome: "Cyber" },
+    { id: "uiux", nome: "UI/UX" },
+    { id: "mobile", nome: "Mobile" },
+    { id: "devops", nome: "DevOps" },
+    { id: "ia", nome: "IA" },
+    { id: "automacao", nome: "Automação" },
+  ];
 
-    cards.forEach((card) => {
-      const categoria = card.dataset.category;
+  const projetos = [
+    {
+      categoria: "web",
+      data: "Agosto, 2026",
+      nomeCategoria: "Web",
+      imagem: "/img/web.jpg",
+      titulo: "Landing Page para Startup",
+      descricao: "Criação de página responsiva para uma startup da área de tecnologia.",
+      empresa: "TechCorp",
+      valor: "R$ 1.800",
+      identificador: "landing",
+    },
+    {
+      categoria: "dados",
+      data: "Agosto, 2026",
+      nomeCategoria: "Dados",
+      imagem: "/img/dados.jpg",
+      titulo: "Dashboard de Indicadores",
+      descricao: "Painel para acompanhamento de métricas e indicadores do negócio.",
+      empresa: "DataBridge",
+      valor: "R$ 2.500",
+      identificador: "dashboard",
+    },
+    {
+      categoria: "uiux",
+      data: "Agosto, 2026",
+      nomeCategoria: "UI/UX",
+      imagem: "/img/uiux.jpg",
+      titulo: "Interface para Aplicativo",
+      descricao: "Protótipo de telas e fluxo de navegação para aplicativo mobile.",
+      empresa: "AppLab",
+      valor: "R$ 1.600",
+      identificador: "app",
+    },
+    {
+      categoria: "devops",
+      data: "Agosto, 2026",
+      nomeCategoria: "DevOps",
+      imagem: "/img/devops.jpg",
+      titulo: "Implementação de CI/CD",
+      descricao: "Configuração de pipeline de integração e entrega contínua para projeto de software.",
+      empresa: "DevFlow",
+      valor: "R$ 2.800",
+      identificador: "cicd",
+    },
+    {
+      categoria: "dados",
+      data: "Agosto, 2026",
+      nomeCategoria: "Dados",
+      imagem: "/img/dados.jpg",
+      titulo: "Dashboard de Indicadores",
+      descricao: "Painel para acompanhamento de métricas e indicadores do negócio.",
+      empresa: "DataBridge",
+      valor: "R$ 2.500",
+      identificador: "loja",
+    },
+    {
+      categoria: "automacao",
+      data: "Agosto, 2026",
+      nomeCategoria: "Automação",
+      imagem: "/img/automacao.jpg",
+      titulo: "Automação em Python",
+      descricao: "Automação de tarefas repetitivas e geração de relatórios internos.",
+      empresa: "FlowLab",
+      valor: "R$ 3.000",
+      identificador: "python",
+    },
+    {
+      categoria: "cyber",
+      data: "Agosto, 2026",
+      nomeCategoria: "Cyber",
+      imagem: "/img/cyber.jpg",
+      titulo: "Revisão de Segurança",
+      descricao: "Checklist de segurança, permissões e boas práticas em aplicação web.",
+      empresa: "SafeBit",
+      valor: "R$ 2.800",
+      identificador: "cyber",
+    },
+    {
+      categoria: "web",
+      data: "Agosto, 2026",
+      nomeCategoria: "Web",
+      imagem: "/img/web.jpg",
+      titulo: "Site Institucional",
+      descricao: "Desenvolvimento de cinco páginas responsivas para pequena empresa.",
+      empresa: "Clínica Vitta",
+      valor: "R$ 2.400",
+      identificador: "institucional",
+    },
+    {
+      categoria: "uiux",
+      data: "Agosto, 2026",
+      nomeCategoria: "UI/UX",
+      imagem: "/img/uiux.jpg",
+      titulo: "Identidade Visual",
+      descricao: "Definição visual e aplicação da marca em peças digitais principais.",
+      empresa: "Studio Nova",
+      valor: "R$ 1.500",
+      identificador: "identidade",
+    },
+    {
+      categoria: "web",
+      data: "Agosto, 2026",
+      nomeCategoria: "Web",
+      imagem: "/img/web.jpg",
+      titulo: "Painel de Pedidos",
+      descricao: "Interface simples para cadastro e atualização do status de pedidos.",
+      empresa: "FoodBox",
+      valor: "R$ 2.200",
+      identificador: "pedidos",
+    },
+    {
+      categoria: "mobile",
+      data: "Setembro, 2026",
+      nomeCategoria: "Mobile",
+      imagem: "/img/mobile.jpg",
+      titulo: "Aplicativo de Serviços",
+      descricao: "Criação de fluxo mobile para contratação de serviços e acompanhamento de pedidos.",
+      empresa: "MoveTech",
+      valor: "R$ 3.200",
+      identificador: "mobile-1",
+    },
+    {
+      categoria: "ia",
+      data: "Setembro, 2026",
+      nomeCategoria: "IA",
+      imagem: "/img/ia.jpg",
+      titulo: "Assistente Inteligente",
+      descricao: "Protótipo de assistente para organizar informações e responder dúvidas frequentes.",
+      empresa: "NovaAI",
+      valor: "R$ 4.000",
+      identificador: "ia-1",
+    },
+    {
+      categoria: "automacao",
+      data: "Setembro, 2026",
+      nomeCategoria: "Automação",
+      imagem: "/img/automacao.jpg",
+      titulo: "Automação de Relatórios",
+      descricao: "Integração de dados e geração automática de relatórios para equipes administrativas.",
+      empresa: "SmartFlow",
+      valor: "R$ 2.700",
+      identificador: "automacao",
+    },
+    {
+      categoria: "mobile",
+      data: "Setembro, 2026",
+      nomeCategoria: "Mobile",
+      imagem: "/img/mobile.jpg",
+      titulo: "Aplicativo de Serviços",
+      descricao: "Criação de fluxo mobile para contratação de serviços e acompanhamento de pedidos.",
+      empresa: "MoveTech",
+      valor: "R$ 3.200",
+      identificador: "mobile-2",
+    },
+    {
+      categoria: "ia",
+      data: "Setembro, 2026",
+      nomeCategoria: "IA",
+      imagem: "/img/ia.jpg",
+      titulo: "Assistente de Atendimento",
+      descricao: "Protótipo de assistente para organizar informações e responder dúvidas frequentes.",
+      empresa: "NovaAI",
+      valor: "R$ 4.000",
+      identificador: "ia-2",
+    },
+  ];
 
-      card.style.display =
-        categoriaSelecionada === "all" || categoria === categoriaSelecionada
-          ? ""
-          : "none";
-    });
-  }, [categoriaSelecionada]);
+  const projetosFiltrados =
+    categoriaSelecionada === "all"
+      ? projetos
+      : projetos.filter(
+          (projeto) => projeto.categoria === categoriaSelecionada
+        );
 
   return (
-    <>
-      <main className="mainprojetos">
-        <h1>PROJETOS DISPONÍVEIS</h1>
-        <section className="categoria-row">
-          <span>Categoria</span>
-          <div className="categoria-buttons">
+    <main className="mainprojetos">
+      <h1>PROJETOS DISPONÍVEIS</h1>
+
+      <section className="categoria-row">
+        <span>Categoria</span>
+
+        <div className="categoria-buttons">
+          {filtros.map((filtro) => (
             <button
-              className={`filter-btn ${categoriaSelecionada === "all" ? "active" : ""}`}
-              data-filter="all"
+              key={filtro.id}
+              className={`filter-btn ${
+                categoriaSelecionada === filtro.id ? "active" : ""
+              }`}
               type="button"
-              onClick={() => setCategoriaSelecionada("all")}
+              onClick={() => alert("O clique está funcionando!")}
             >
-              Todos
+              {filtro.nome}
             </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "web" ? "active" : ""}`}
-              data-filter="web"
-              type="button"
-              onClick={() => setCategoriaSelecionada("web")}
-            >
-              Web
-            </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "dados" ? "active" : ""}`}
-              data-filter="dados"
-              type="button"
-              onClick={() => setCategoriaSelecionada("dados")}
-            >
-              Dados
-            </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "cyber" ? "active" : ""}`}
-              data-filter="cyber"
-              type="button"
-              onClick={() => setCategoriaSelecionada("cyber")}
-            >
-              Cyber
-            </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "uiux" ? "active" : ""}`}
-              data-filter="uiux"
-              type="button"
-              onClick={() => setCategoriaSelecionada("uiux")}
-            >
-              UI/UX
-            </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "mobile" ? "active" : ""}`}
-              data-filter="mobile"
-              type="button"
-              onClick={() => setCategoriaSelecionada("mobile")}
-            >
-              Mobile
-            </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "devops" ? "active" : ""}`}
-              data-filter="devops"
-              type="button"
-              onClick={() => setCategoriaSelecionada("devops")}
-            >
-              DevOps
-            </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "ia" ? "active" : ""}`}
-              data-filter="ia"
-              type="button"
-              onClick={() => setCategoriaSelecionada("ia")}
-            >
-              IA
-            </button>
-            <button
-              className={`filter-btn ${categoriaSelecionada === "automacao" ? "active" : ""}`}
-              data-filter="automacao"
-              type="button"
-              onClick={() => setCategoriaSelecionada("automacao")}
-            >
-              Automação
-            </button>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        <section className="cards-grid">
-          <article className="project-card" data-category="web">
+      <section className="cards-grid">
+        {projetosFiltrados.map((projeto) => (
+          <article
+            className="project-card"
+            data-category={projeto.categoria}
+            key={projeto.identificador}
+          >
             <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>Web</b>
+              <span>{projeto.data}</span>
+              <b>{projeto.nomeCategoria}</b>
             </header>
-            <div className="card-image" style={{ "--photo": "url('/img/web.jpg')", backgroundImage: "url('/img/web.jpg')" }}></div>
-            <h2>Landing Page para Startup</h2>
-            <p>Criação de página responsiva para uma startup da área de tecnologia.</p>
+
+            <div
+              className="card-image"
+              style={{
+                "--photo": `url('${projeto.imagem}')`,
+                backgroundImage: `url('${projeto.imagem}')`,
+              }}
+            ></div>
+
+            <h2>{projeto.titulo}</h2>
+
+            <p>{projeto.descricao}</p>
+
             <footer className="card-footer">
-              <small>TechCorp · R$ 1.800</small>
-              <a href="/projeto" className="card-arrow" data-project="landing" aria-label="Ver detalhes do projeto">→</a>
+              <small>
+                {projeto.empresa} · {projeto.valor}
+              </small>
+
+              <a
+                href="/projeto"
+                className="card-arrow"
+                data-project={projeto.identificador}
+                aria-label="Ver detalhes do projeto"
+              >
+                →
+              </a>
             </footer>
           </article>
-
-          <article className="project-card" data-category="dados">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>Dados</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/dados.jpg')", backgroundImage: "url('/img/dados.jpg')" }}></div>
-            <h2>Dashboard de Indicadores</h2>
-            <p>Painel para acompanhamento de métricas e indicadores do negócio.</p>
-            <footer className="card-footer">
-              <small>DataBridge · R$ 2.500</small>
-              <a href="/projeto" className="card-arrow" data-project="dashboard" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="uiux">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>UI/UX</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/uiux.jpg')", backgroundImage: "url('/img/uiux.jpg')" }}></div>
-            <h2>Interface para Aplicativo</h2>
-            <p>Protótipo de telas e fluxo de navegação para aplicativo mobile.</p>
-            <footer className="card-footer">
-              <small>AppLab · R$ 1.600</small>
-              <a href="/projeto" className="card-arrow" data-project="app" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="devops">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>DevOps</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/devops.jpg')", backgroundImage: "url('/img/devops.jpg')" }}></div>
-            <h2>Implementação de CI/CD</h2>
-            <p>Configuração de pipeline de integração e entrega contínua para projeto de software.</p>
-            <footer className="card-footer">
-              <small>DevFlow · R$ 2.800</small>
-              <a href="/projeto" className="card-arrow" data-project="cicd" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="dados">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>Dados</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/dados.jpg')", backgroundImage: "url('/img/dados.jpg')" }}></div>
-            <h2>Dashboard de Indicadores</h2>
-            <p>Painel para acompanhamento de métricas e indicadores do negócio.</p>
-            <footer className="card-footer">
-              <small>DataBridge · R$ 2.500</small>
-              <a href="/projeto" className="card-arrow" data-project="loja" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="automacao">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>Automação</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/automacao.jpg')", backgroundImage: "url('/img/automacao.jpg')" }}></div>
-            <h2>Automação em Python</h2>
-            <p>Automação de tarefas repetitivas e geração de relatórios internos.</p>
-            <footer className="card-footer">
-              <small>FlowLab · R$ 3.000</small>
-              <a href="/projeto" className="card-arrow" data-project="python" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="cyber">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>Cyber</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/cyber.jpg')", backgroundImage: "url('/img/cyber.jpg')" }}></div>
-            <h2>Revisão de Segurança</h2>
-            <p>Checklist de segurança, permissões e boas práticas em aplicação web.</p>
-            <footer className="card-footer">
-              <small>SafeBit · R$ 2.800</small>
-              <a href="/projeto" className="card-arrow" data-project="cyber" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="web">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>Web</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/web.jpg')", backgroundImage: "url('/img/web.jpg')" }}></div>
-            <h2>Site Institucional</h2>
-            <p>Desenvolvimento de cinco páginas responsivas para pequena empresa.</p>
-            <footer className="card-footer">
-              <small>Clínica Vitta · R$ 2.400</small>
-              <a href="/projeto" className="card-arrow" data-project="institucional" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="uiux">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>UI/UX</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/uiux.jpg')", backgroundImage: "url('/img/uiux.jpg')" }}></div>
-            <h2>Identidade Visual</h2>
-            <p>Definição visual e aplicação da marca em peças digitais principais.</p>
-            <footer className="card-footer">
-              <small>Studio Nova · R$ 1.500</small>
-              <a href="/projeto" className="card-arrow" data-project="identidade" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="web">
-            <header className="card-header">
-              <span>Agosto, 2026</span>
-              <b>Web</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/web.jpg')", backgroundImage: "url('/img/web.jpg')" }}></div>
-            <h2>Painel de Pedidos</h2>
-            <p>Interface simples para cadastro e atualização do status de pedidos.</p>
-            <footer className="card-footer">
-              <small>FoodBox · R$ 2.200</small>
-              <a href="/projeto" className="card-arrow" data-project="pedidos" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="mobile">
-            <header className="card-header">
-              <span>Setembro, 2026</span>
-              <b>Mobile</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/mobile.jpg')", backgroundImage: "url('/img/mobile.jpg')" }}></div>
-            <h2>Aplicativo de Serviços</h2>
-            <p>Criação de fluxo mobile para contratação de serviços e acompanhamento de pedidos.</p>
-            <footer className="card-footer">
-              <small>MoveTech · R$ 3.200</small>
-              <a href="/projeto" className="card-arrow" data-project="mobile" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="ia">
-            <header className="card-header">
-              <span>Setembro, 2026</span>
-              <b>IA</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/ia.jpg')", backgroundImage: "url('/img/ia.jpg')" }}></div>
-            <h2>Assistente Inteligente</h2>
-            <p>Protótipo de assistente para organizar informações e responder dúvidas frequentes.</p>
-            <footer className="card-footer">
-              <small>NovaAI · R$ 4.000</small>
-              <a href="/projeto" className="card-arrow" data-project="ia" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="automacao">
-            <header className="card-header">
-              <span>Setembro, 2026</span>
-              <b>Automação</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/automacao.jpg')", backgroundImage: "url('/img/automacao.jpg')" }}></div>
-            <h2>Automação de Relatórios</h2>
-            <p>Integração de dados e geração automática de relatórios para equipes administrativas.</p>
-            <footer className="card-footer">
-              <small>SmartFlow · R$ 2.700</small>
-              <a href="/projeto" className="card-arrow" data-project="automacao" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="mobile">
-            <header className="card-header">
-              <span>Setembro, 2026</span>
-              <b>Mobile</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/mobile.jpg')", backgroundImage: "url('/img/mobile.jpg')" }}></div>
-            <h2>Aplicativo de Serviços</h2>
-            <p>Criação de fluxo mobile para contratação de serviços e acompanhamento de pedidos.</p>
-            <footer className="card-footer">
-              <small>MoveTech · R$ 3.200</small>
-              <a href="/projeto" className="card-arrow" data-project="mobile" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-
-          <article className="project-card" data-category="ia">
-            <header className="card-header">
-              <span>Setembro, 2026</span>
-              <b>IA</b>
-            </header>
-            <div className="card-image" style={{ "--photo": "url('/img/ia.jpg')", backgroundImage: "url('/img/ia.jpg')" }}></div>
-            <h2>Assistente de Atendimento</h2>
-            <p>Protótipo de assistente para organizar informações e responder dúvidas frequentes.</p>
-            <footer className="card-footer">
-              <small>NovaAI · R$ 4.000</small>
-              <a href="/projeto" className="card-arrow" data-project="ia" aria-label="Ver detalhes do projeto">→</a>
-            </footer>
-          </article>
-        </section>
-      </main>
-    </>
+        ))}
+      </section>
+    </main>
   );
 }
