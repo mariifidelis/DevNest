@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Comportamentos from "@/components/Comportamentos";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}
       data-scroll-behaivior=" ">
-      <body>{children}<Comportamentos /></body>
+      <body>{children}</body>
     </html>
   );
 }

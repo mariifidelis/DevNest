@@ -1,9 +1,10 @@
+
 import FooterSimple from "@/components/FooterSimple";
 
-export default function RootLayout({ children }) {
+export default function SimpleLayout({ children }) {
   return (
     <>
-      <section style={{ display: "contents" }}>{children}</section>
+      {children}
       <FooterSimple />
     </>
   );

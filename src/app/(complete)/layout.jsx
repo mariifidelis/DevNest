@@ -1,12 +1,13 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export default function RootLayout({ children }) {
+export default function CompleteLayout({ children }) {
   return (
-    <>
+    <div className="topbar">
       <Header />
-      <section style={{ display: "contents" }}>{children}</section>
+      {children}
       <Footer />
-    </>
+    </div>
   );
 }

@@ -3,12 +3,23 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Header() {
-  const [menuAberto, setMenuAberto] = useState(false);
 
-  // O estado guarda se o menu do celular está aberto ou fechado.
+  const caminho = usePathname();
+
+  const mostrarPerfil = [
+    "/sobre",
+    "/projetos",
+    "/mpropostas",
+  ].includes(caminho);
+
+
+
+
+  const [menuAberto, setMenuAberto] = useState(false);
   function alternarMenu() {
     setMenuAberto(!menuAberto);
   }
@@ -46,14 +57,23 @@ export default function Header() {
           <li>
             <Link href="/projetos">Projetos</Link>
           </li>
-          <li>
-            <Link href="/login">Login</Link>
-          </li>
-          <li>
-            <Link href="/cadastro" style={{ color: "#0e21ce" }}>
-              Cadastre-se
-            </Link>
-          </li>
+          {mostrarPerfil && (
+            <li>
+              <Link href="/perfil">Perfil</Link>
+            </li>
+          )}
+          {!mostrarPerfil && (
+            <>
+              <li>
+                <Link href="/login">Login</Link>
+              </li>
+              <li>
+                <Link href="/cadastro" style={{ color: "#0e21ce" }}>
+                  Cadastre-se
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>

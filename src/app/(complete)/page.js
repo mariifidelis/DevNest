@@ -1,14 +1,9 @@
 //Ana Carolina - 10771387         |Mariana Fidelis - 10721308
 
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className='topbar'>
-       <Header />
 
     <main className="main">
       <section className='photo-mosaic'>
@@ -72,11 +67,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
-
-
   
   );
 
