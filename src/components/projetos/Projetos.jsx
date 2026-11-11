@@ -207,7 +207,7 @@ export default function Projetos() {
               className={`filter-btn ${
                 categoriaSelecionada === filtro.id ? "active" : ""
               }`}
-             onClick={() => alert("FUNCIONOU!")}
+             onClick={() => setCategoriaSelecionada(filtro.id)}
             >
               {filtro.nome}
             </button>
