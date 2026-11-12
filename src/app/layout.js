@@ -1,3 +1,6 @@
+/*Ana Carolina - 10771387         |Mariana Fidelis - 10721308*/
+
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "../styles/home.css";

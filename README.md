@@ -160,3 +160,6 @@ A ia foi usada para auxiliar nos ajustes de erro, na página de cadastro pois el
 
 
 05/11 - Implementação das paginas e separação do footer e header nas paginas que são diferentes, e término da passagem das paginas para o react. 
+
+
+12/11 - Implementação da API e atualização de partes faltantes ou ajuste de erros.

@@ -1,5 +1,5 @@
+/*Ana Carolina - 10771387         |Mariana Fidelis - 10721308*/
 
-/* CONTRATO */
 
 .contratopg {
     padding: clamp(40px, 6vw, 60px) 0 90px;
@@ -34,7 +34,7 @@
     cursor: pointer;
 }
 
-/* CONTRATO FECHADO */
+
 
 .contfechado {
     width: min(650px, calc(100% - 40px));
@@ -119,7 +119,7 @@
     font-size: 1rem;
 }
 
-/* RESPONSIVIDADE */
+
 
 @media (max-width: 720px) {
     .contratopg {

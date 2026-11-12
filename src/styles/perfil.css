@@ -1,5 +1,5 @@
+/*Ana Carolina - 10771387         |Mariana Fidelis - 10721308*/
 
-/* PERFIL */
 
 .perfilpg {
     background: var(--bg);
@@ -12,7 +12,7 @@
     flex: 1 0 auto;
 }
 
-/* CABEÇALHO DO PERFIL */
+
 
 .pheader {
     min-height: var(--header-h);
@@ -49,7 +49,7 @@
     border-radius: 50%;
 }
 
-/* APRESENTAÇÃO */
+
 
 .perfilhero {
     background: linear-gradient(135deg, #0b0f2e, #27348d);
@@ -109,7 +109,7 @@
     flex: 0 0 auto;
 }
 
-/* CONTEÚDO DO PERFIL */
+
 
 .prcont {
     width: var(--content);
@@ -176,7 +176,7 @@
     font-weight: 600;
 }
 
-/* LINKS */
+
 
 .plinks {
     width: var(--content);
@@ -214,7 +214,7 @@
     flex: 0 0 auto;
 }
 
-/* RODAPÉ DO PERFIL */
+
 
 .site-footer--on-color {
     background: var(--navy);
@@ -244,7 +244,7 @@
     font-size: .75rem;
 }
 
-/* RESPONSIVIDADE */
+
 
 @media (max-width: 720px) {
     .prcont {

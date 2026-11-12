@@ -1,3 +1,5 @@
+//Ana Carolina - 10771387         |Mariana Fidelis - 10721308
+
 
 "use client";
 
@@ -41,7 +43,7 @@ export default function ContratoFechado() {
       <h2>CONTRATO FECHADO</h2>
 
       <p>O contrato foi confirmado com sucesso.</p>
-      <p>Parabéns, por fechar seu contrato!</p>
+      <p>Parabéns, {usuario.nome} por fechar seu contrato!</p>
       <p>O projeto já está disponível na sua lista de projetos ativos.</p>
 
       <br />

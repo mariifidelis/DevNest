@@ -48,7 +48,6 @@ export default function Cadastro() {
       return;
     }
 
-    // FileReader lê a imagem escolhida, sem enviar o arquivo para um servidor.
     const leitor = new FileReader();
     leitor.onload = function () {
       setFoto(leitor.result);

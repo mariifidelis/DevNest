@@ -1,5 +1,5 @@
+/*Ana Carolina - 10771387         |Mariana Fidelis - 10721308*/
 
-/* LOGIN */
 
 .login {
     min-height: 100vh;
@@ -12,7 +12,7 @@
     background: #05092e;
 }
 
-/* ANIMAÇÕES DO FUNDO */
+
 
 .login::before,
 .name::before {
@@ -57,7 +57,7 @@
     to { background-position: 62px 62px, 62px 62px; }
 }
 
-/* ELEMENTOS FLUTUANTES */
+
 
 .login-blob {
     position: absolute;
@@ -118,7 +118,7 @@
     100% { transform: translate(0, 0) rotate(360deg) scale(1); opacity: .65; }
 }
 
-/* CARTÃO DE LOGIN */
+
 
 .logincard {
     width: min(450px, 100%);
@@ -276,7 +276,7 @@
     box-shadow: 0 8px 18px rgba(21, 38, 141, .16);
 }
 
-/* MENSAGENS DE ERRO */
+
 
 .field-error {
     display: block;
@@ -287,7 +287,6 @@
     min-height: 1em;
 }
 
-/* CADASTRO */
 
 .name {
     width: min(760px, calc(100% - 32px));
@@ -523,7 +522,7 @@
     margin-top: 8px;
 }
 
-/* RESPONSIVIDADE */
+
 
 @media (max-width: 720px) {
     .field-row3 {
@@ -551,7 +550,6 @@
     }
 }
 
-/* BOTÃO MOSTRAR/OCULTAR SENHA */
 
 .mostrar-senha {
     display: block;

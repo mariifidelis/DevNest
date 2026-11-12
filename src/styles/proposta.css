@@ -1,5 +1,5 @@
+/*Ana Carolina - 10771387         |Mariana Fidelis - 10721308*/
 
-/* DETALHES DO PROJETO E PROPOSTA */
 
 .mainprojeto,
 .mainproposta,
@@ -141,7 +141,7 @@
     margin-top: 42px;
 }
 
-/* FORMULÁRIO DA PROPOSTA */
+
 
 .propostaformbox {
     margin-top: 25px;
@@ -205,7 +205,7 @@
     resize: vertical;
 }
 
-/* MINHAS PROPOSTAS */
+
 
 .propostapg {
     max-width: 1000px;
@@ -275,7 +275,7 @@
     white-space: nowrap;
 }
 
-/* RESPONSIVIDADE */
+
 
 @media (max-width: 720px) {
     .mainprojeto,
